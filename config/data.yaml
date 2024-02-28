@@ -1,11 +1,18 @@
-raw_train_data_path: ../../data/raw/Training
-raw_test_data_path: ../../data/raw/Testing
-processed_train_data_path: ../../data/processed/Training
-processed_test_data_path: ../../data/processed/Testing
-ph1_intro_template: "Phase 1: Generating Pairs\nTitle: Generate examples of a given relation\nDescription: Given an examples of related word pairs, create three new analogous examples.\nKeywords: analogy, English, word relations, semantics, similarity\nInstructions:\n(1) This survey will be used to better understand relations between words. Your input is much appreciated.\n(2) If any of the questions in a HIT are unanswered, then the assignment is no longer useful to us and we will be unable to pay for the assignment.\n(3) Skip a HIT if you do not know the meanings of the words.\n(4) Attempt HITs only if you are a native speaker of English or very fluent in English.\n(5) Certain check questions will be used to make sure your input is responsible and reasonable. HITs that fail these tests will be rejected. If you fail too many check questions, then it will be assumed that you are not following instructions (3) and/or (4) above, and ALL of your HITs will be rejected.\n(6) Question 1 asks you to identify the relation that is shared by a set of word pairs. For example, consider the following set of word pairs: traffic:street, water:riverbed, data:network, electricity:wire, hikers:trail. Each of these X:Y pairs shares the relation “X flows on/in/over/through a Y”.\n(7) Question 2 asks you to generate four more word pairs with the same relation as the pairs in Question 1. For example, effluent:sewer, blood:artery, oil:pipeline, gossip:grapevine.\n\nSample HIT:\n\n"
-ph2_intro_template: "Phase 2: Rating Pairs\nTitle: Select the most and least illustrative examples of a given relation\nDescription: Given an example word pair, rate other word pairs according to the similarity of their relations to the relation illustrated in the given example.\nKeywords: analogy, English, word relations, semantics, similarity, rating\nInstructions:\n(1) This survey will be used to better understand relations between words. Your input is much appreciated.\n(2) If any of the questions in a HIT are unanswered, then the assignment is no longer useful to us and webwill be unable to pay for the assignment.\n(3) Skip a HIT if you do not know the meanings of the words.\n(4) Attempt HITs only if you are a native speaker of English or very fluent in English.\n(5) Certain check questions will be used to make sure your input is responsible and reasonable. HITs that fail these tests will be rejected. If you fail too many check questions, then it will be assumed that you are not following instructions (3) and/or (4) above, and ALL of your HITs will be rejected.(6) Question 1 asks you to identify the relation that is shared by a set of word pairs. For example, consider the following set of word pairs: traffic:street, water:riverbed, data:network, electricity:wire, hikers:trail. Each of these X:Y pairs shares the relation “X flows on/in/over/through a Y”.\n(7) Question 2 asks you to select from a set of four pairs the pairs that are most and least illustrative of a given relation.\n\nSample HIT:\n\n"
-ph1_q1_template: Null
-ph1_q2_template: "Question 2: Consider the following word pairs:\n\n{}\n\nThese X:Y pairs share a relation, 'X R Y'. Give four additional word pairs that illustrate the same relation, in the same order (X on the left, Y on the right). Please do not use phrases composed of two or more words in your examples (e.g., 'racing car'). Please do not use names of people, places, or things in your examples (e.g., 'Europe', 'Kleenex').\n\n"
-ph2_q1_template: Null
-ph2_q2_template: "Question 2: Consider the following word pairs:{}. These X:Y pairs share a relation, 'X R Y'. Now consider the following word pairs:\n\n{}\n\nWhich of the above numbered word pairs is the MOST illustrative example of the same relation 'X R Y'?\n____\nWhich of the above numbered word pairs is the LEAST illustrative example of the same relation 'X R Y'?\n____\nNote: In some cases, a word pair might be in reverse order. For example, tree:forest is in reverse order for the relation 'X is made from a collection of Y'. The correct order would be forest:tree; a forest is made from a collection of trees. You should treat reversed pairs as BAD examples of the given relation."
+PH2ANS_DIR: ../data/raw/Testing/Phase2Answers
+PH1QUE_DIR: ../data/raw/Testing/Phase1Questions
+GPTQUE_DIR: ../data/processed
+GPTANS_DIR: ../data/interim
+CAT_PATH: ../data/raw/subcategories-list.txt
+REV_PATH: data/raw/reversals.txt
+SELECTED_IDXS:
+  - 2g
+  - 2a
+  - 10b
+  - 7f
+  - 4d
+  - 4b
+  - 1c
+  - 6d
+Q_TEMPLATE: 'In this line, based on the pairs provided, choose among them the least illustrative and the most illustrative representation for the kind of relation demonstrated by these examples: {}. The output should be these four pairs and the least illustrative and the most illustrative as the 5th and 6th column, accordingly. The output should be written in one line, 6 pairs overall in the following format: "pair1, pair2, pair3, pair4, least_illustrative, most_illustrative". And that is it, no brackets, no quotes, nothing else, it must be in this format. Do not include the examples of the relation in your output! They just provide you examples of a certain relation and based on this relation (that you infer from these examples) you need to choose the least and most illustrative among the following 4 pairs:'
+
 

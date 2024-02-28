@@ -87,3 +87,5 @@ target/
 
 # data
 /data/**/*.txt
+*.csv
+*.xlsx
